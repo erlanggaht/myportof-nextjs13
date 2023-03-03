@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,500;1,400;1,800&display=swap");
+
+:root {
+  --primary-color: #575757;
+  --primary-text-color: #f3f3f3;
+  --secondary-all-color: #dbdbdb;
+  --secondary-color: #282828;
+  --tersier-color: #3d3b3c;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(12, 15, 31);
+  background: linear-gradient(
+    270deg,
+    rgb(40, 40, 40) 50%,
+    rgba(61, 59, 60, 1) 50%
+  );
+  color: var(--primary-text-color);
+  font-size: 16px;
+  overflow: auto;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.content-profile {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr ;
+}
+
+
+.circle {
+  display: inline-block;
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  margin: 0 3px;
+}
+
+.circle1 {
+  background-color: var(--secondary-color);
+}
+.circle2 {
+  background-color: var(--tersier-color);
+}
+.circle3 {
+  background-color: var(--primary-color);
+}
+.circle4 {
+  background-color: var(--secondary-all-color);
+}
+
+.menuCircle {
+  border-radius: 89% 0 0 0;
+}
+.skill {
+  background-color: var(--primary-color);
+}
+
+/* GridPortof */
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px 16px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "imgleft1 imgright1"
+    "img-left2 imgright1";
+  margin: 2rem 0;
+}
+
+.imgleft1 {
+  grid-area: imgleft1;
+}
+
+.img-left2 {
+  grid-area: img-left2;
+}
+
+.imgright1 {
+  grid-area: imgright1;
+}
+
+#portof {
+    border-top:1px solid #dbdbdb;
+}
+@media screen and (max-width: 812px){
+
+}
+@media screen and (max-width: 968px) {
+  .container-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 12px 16px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "imgleft1 imgleft1"
+      "img-left2 img-left2"
+      "imgright1 imgright1";
+    margin: 2rem 0;
+  }
+  .imgright1 {
+    justify-content: flex-start ;
+  }
+  .imgleft1,.img-left2{
+    align-items: flex-start;display: flex;
+  }
+ 
+  .cards:after {
+  display: none;
+}
+}
+
+/* Arrow Shape */
+
+.cards:after {
+    content: "";
+  position: absolute;
+  right: -10px;
+  top:34px;
+  width: auto;
+  height: auto;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #262626;
+  border-bottom: 10px solid transparent;
+}
+
+#footer {
+  background-color: rgba(40, 40, 40,0.1) ;
+  
+}
+
+.input-class {
+  border-bottom: solid 2px var(--secondary-all-color);padding: 7px 0px;font-weight: 400 ;
+}
+.input-class::placeholder {
+  color: var(--primary-text-color);
+  font-weight: 400;
+}
+.input-class:hover::placeholder {
+  color: var(--secondary-all-color);transition: all .2s; opacity: 0.5;
+}
+
+.input-class:active{
+  background-color: #575757;
+} 
+.input-class:focus{
+  background-color: var(--secondary-color);
+  border-bottom: transparent 2px solid;
+  outline: 0px;text-transform: capitalize;padding:7px 6px;transition: ease-in-out .2s;border-radius: 2px;
+} 
