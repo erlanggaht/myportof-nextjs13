@@ -1,9 +1,10 @@
 import Image from "next/image";
 import indoMaps from '../icons/indonesiaHigh.png'
 
-export default function Footer() {
+export default function Footer({footer} : any) {
+
     return (
-        <div id='footer' className="shadow-sm">
+        <div id='footer' className="shadow-sm" ref={footer}>
           <div className='pt-6 pb-8 bg-slate-100 text-neutral-600 relative'>
                 <h1 className="tracking-wider text-2xl font-base text-center uppercase ">Contact</h1>
                 <div className='bg-neutral-200 h-3 absolute bottom-0 left-0 right-0 opacity-50 '></div>

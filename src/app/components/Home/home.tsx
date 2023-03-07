@@ -2,12 +2,22 @@
 import Image from 'next/image'
 import humanTarget from '../icons/human-target.svg'
 import imageProfile from '@/app/components/icons/imageProfile.png'
+import Link from 'next/link'
 
 
-export default function Home() {
+export default function Home({footer,skills,projects,Works} : any) {
 
-  function HandleLink(e: any) {
 
+  function HandleLink(e: any, ref: { offsetTop: number } )  {
+    const innerSkills = e.target as HTMLInputElement 
+    const scroll = () => {
+      window.scrollTo({
+        top: ref.offsetTop - 200,
+        left: 0,
+        behavior: "smooth",
+      });
+    } 
+    innerSkills.id && scroll()
   }
 
   return (
@@ -29,17 +39,17 @@ export default function Home() {
             <div className='Navbar sm:items-center flex flex-col sm:flex-row m-8'>
               <div className='line-vertical flex flex-col items-center w-full sm:w-1/2  sm:m-0'><span className='w-full h-[1px] mx-8 bg-slate-100 inline-block '></span></div>
                 <ul className='grid grid-cols-3 sm:flex sm:flex-row sm:items-center  md:flex-nowrap text-sm font-[300]  tracking-wider gap-4 sm:gap-0 mt-2 sm:mt-0 '>
-                <li className='listNav mx-0 sm:mx-7 group hover:text-neutral-800 transition-colors cursor-pointer relative'
-                  onClick={(e) => HandleLink(e)}>Home</li>
+                <Link href ="/"><li className='listNav mx-0 sm:mx-7 group hover:text-neutral-800 transition-colors cursor-pointer relative'
+                 id='home'>Home</li></Link>
                 <li className='listNav mx-0 sm:mx-7 hover:text-neutral-800 transition-colors cursor-pointer'
-                  onClick={(e) => HandleLink(e)}>About</li>
+                  onClick={(e) => HandleLink(e,skills.current)} id='skills'>Skills</li>
                 <li className='listNav mx-0 sm:mx-7 hover:text-neutral-800 transition-colors cursor-pointer'
-                  onClick={(e) => HandleLink(e)}>Projects</li>
+                  onClick={(e) => HandleLink(e,projects.current)} id="projects">Projects</li>
                 <li className='listNav mx-0 sm:mx-7 hover:text-neutral-800 transition-colors cursor-pointer'
-                  onClick={(e) => HandleLink(e)}>Blogs</li>
+                  onClick={(e) => HandleLink(e,Works.current)} id='Works'>Works</li>
                 <li className='listNav mx-0 sm:mx-7 hover:text-neutral-800 transition-colors cursor-pointer'
-                  onClick={(e) => HandleLink(e)}>Contact</li>
-                <Image src={humanTarget} alt='humanTarget' width={200} height={200} className=' cursor-pointer hover:bg-neutral-800 rounded-full transition-all w-6 h-6 sm:w-8 sm:h-8 ' />
+                  onClick={(e) => HandleLink(e,footer.current)} id='contact'>Contact</li>
+                   <Link href={'api-kita'}> <Image src={humanTarget} alt='humanTarget' width={200} height={200} className=' cursor-pointer hover:bg-neutral-800 rounded-full transition-all w-6 h-6 sm:w-8 sm:h-8 '/></Link>
               </ul>
               </div>
          
@@ -52,8 +62,8 @@ export default function Home() {
 
                 <button className='outline-none border-0 my-4 mx-[8px] py-2 px-6 sm:px-12 sm:py-4 bg-[#282828] hover:bg-neutral-700 transition-colors shadow-sm' style={{ fontWeight: "300" }}>Contact</button>
                 </div>
-                <div className='menuCircle flex flex-row absolute bottom-0 right-0 bg-[rgba(63,63,63,0.8)] p-24  hidden sm:inline'>
-                  <div className=' flex flex-row bottom-6 right-10 absolute hidden sm:inline'>
+                <div className='menuCircle  flex-row absolute bottom-0 right-0 bg-[rgba(63,63,63,0.8)] p-24  hidden sm:inline'>
+                  <div className=' flex-row bottom-6 right-10 absolute hidden sm:inline'>
                     <div className='circle circle1'></div>
                     <div className='circle circle2'></div>
                     <div className='circle circle3'></div>
