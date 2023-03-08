@@ -8,7 +8,8 @@ import { useEffect } from 'react';
 
 const poppins = Poppins({
   weight : ['300','400','700'],
-  subsets : ['latin']
+  subsets : ['latin'],
+  preload: false
 })
 
 
