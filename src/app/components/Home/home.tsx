@@ -3,7 +3,17 @@ import Image from 'next/image'
 import humanTarget from '../icons/human-target.svg'
 import imageProfile from '@/app/components/icons/imageProfile.png'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { ReactElement, useState } from 'react'
 
+
+export const LoadIng = () => {
+ return (
+  <div className="lds-roller">
+    <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+ )  
+}
 
 export default function Home({footer,skills,projects,Works} : any) {
 
@@ -19,6 +29,16 @@ export default function Home({footer,skills,projects,Works} : any) {
     } 
     innerSkills.id && scroll()
   }
+
+
+  const router = useRouter()
+  const [isLoading,setLoading] : any = useState()
+  function linkRout(){
+  router.push('/api-kita')
+  setLoading(<LoadIng/>)  
+}
+  
+  
 
   return (
     <>
@@ -49,7 +69,8 @@ export default function Home({footer,skills,projects,Works} : any) {
                   onClick={(e) => HandleLink(e,Works.current)} id='Works'>Works</li>
                 <li className='listNav mx-0 sm:mx-7 hover:text-neutral-800 transition-colors cursor-pointer'
                   onClick={(e) => HandleLink(e,footer.current)} id='contact'>Contact</li>
-                   <Link href={'api-kita'}> <Image src={humanTarget} alt='humanTarget' width={200} height={200} className=' cursor-pointer hover:bg-neutral-800 rounded-full transition-all w-6 h-6 sm:w-8 sm:h-8 '/></Link>
+                  {!isLoading ? <Image src={humanTarget} alt='humanTarget' width={200} height={200} className=' cursor-pointer hover:bg-neutral-800 rounded-full transition-all w-6 h-6 sm:w-8 sm:h-8 ' onClick={() => linkRout()
+}/> : <LoadIng/>} 
               </ul>
               </div>
          
@@ -60,7 +81,7 @@ export default function Home({footer,skills,projects,Works} : any) {
                 <p className='w-full sm:w-1/2 p-3 sm:p-0 my-1 sm:my-4 mx-[8px] font-thin text-[14px] sm:text-lg tracking-wide'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores modi veritatis at commodi vitae placeat perferendis deserunt molestias ex voluptatem natus, quia nostrum minus quis provident totam ab.</p>
                 <div className='text-left pl-3'>
 
-                <button className='outline-none border-0 my-4 mx-[8px] py-2 px-6 sm:px-12 sm:py-4 bg-[#282828] hover:bg-neutral-700 transition-colors shadow-sm' style={{ fontWeight: "300" }}>Contact</button>
+                <button className='outline-none border-0 my-4 mx-[8px] sm:mx-[0px] py-2 px-6 sm:px-12 sm:py-4 bg-[#282828] hover:bg-neutral-700 transition-colors shadow-sm' style={{ fontWeight: "300" }} onClick={() => linkRout()}>API - KITA</button>
                 </div>
                 <div className='menuCircle  flex-row absolute bottom-0 right-0 bg-[rgba(63,63,63,0.8)] p-24  hidden sm:inline'>
                   <div className=' flex-row bottom-6 right-10 absolute hidden sm:inline'>

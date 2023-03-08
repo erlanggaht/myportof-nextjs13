@@ -24,7 +24,7 @@ export default async function Phone() {
                 <div className="h-[500px] overflow-y-auto m-3">
                     {phoneget.products && phoneget.products.map((m: { id: Key | null | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined }) => {
                         return (    
-                  <Link href={{pathname:'/api-kita/slug/'+m.id}}  key={m.id}><p  className="text-lg font-normal my-2 py-2 px-1 hover:bg-[#222]">{m.id}. {m.title}</p> </Link>
+                  <Link href={{pathname:'/api-kita/products/'+m.id}}  key={m.id}><p  className="text-lg font-normal my-2 py-2 px-1 hover:bg-[#222]">{m.id}. {m.title}</p> </Link>
                         )
                     })}
                 </div>
