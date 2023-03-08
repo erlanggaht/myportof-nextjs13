@@ -78,10 +78,10 @@ export default function Home({footer,skills,projects,Works} : any) {
               <div className='mx-auto mt-auto text-center overflow-hidden hidden sm:inline'><Image src={imageProfile} alt='imageProfile' width={240} height={280} className='drop-shadow-md w-auto sm:w-auto sm:h-auto ' /></div>
               <div className='textContent-profile relative p-3' >
                 <h1 className='text-3xl sm:text-5xl font-[900] px-4 sm:p-0' ><span className='text-neutral-400'>This is </span> Erlanggaht.</h1>
-                <p className='w-full sm:w-1/2 p-3 sm:p-0 my-1 sm:my-4 mx-[8px] font-thin text-[14px] sm:text-lg tracking-wide'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores modi veritatis at commodi vitae placeat perferendis deserunt molestias ex voluptatem natus, quia nostrum minus quis provident totam ab.</p>
+                <p className='w-full sm:w-1/2 p-3 sm:p-0 my-1 sm:my-4 mx-[8px] font-thin text-[14px] sm:text-md sm:font-normal tracking-wide'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto maiores modi veritatis at commodi vitae placeat perferendis deserunt molestias ex voluptatem natus, quia nostrum minus quis provident totam ab.</p>
                 <div className='text-left pl-3'>
 
-                <button className='outline-none border-0 my-4 mx-[8px] sm:mx-[0px] py-2 px-6 sm:px-12 sm:py-4 bg-[#282828] hover:bg-neutral-700 transition-colors shadow-sm' style={{ fontWeight: "300" }} onClick={() => linkRout()}>API - KITA</button>
+                <button className='outline-none border-0 my-4 mx-[8px] sm:mx-[0px] py-2 px-5 sm:px-12 sm:py-4 bg-[#282828] hover:bg-neutral-700 transition-colors shadow-sm' style={{ fontWeight: "400" }} onClick={() => linkRout()}>API - KITA</button>
                 </div>
                 <div className='menuCircle  flex-row absolute bottom-0 right-0 bg-[rgba(63,63,63,0.8)] p-24  hidden sm:inline'>
                   <div className=' flex-row bottom-6 right-10 absolute hidden sm:inline'>

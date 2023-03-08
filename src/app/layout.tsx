@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 
 const poppins = Poppins({
-  weight : ['100','200','500',],
+  weight : ['300','400','700'],
   subsets : ['latin']
 })
 

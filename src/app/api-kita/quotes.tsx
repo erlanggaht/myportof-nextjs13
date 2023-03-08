@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Suspense } from "react"
 
 async function QuotesAPI() {
@@ -19,7 +20,7 @@ export default async function Quotes() {
     <div className="h-[500px] overflow-y-auto m-3">
       {quotes.map((m: { id: Key | null | undefined; author: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined }) => {
         return (
-            <p key={m.id} className="text-lg font-normal my-2 py-2 px-1 hover:bg-[#222] ">{m.id}. {m.author}</p>
+            <Link href={{pathname : "/api-kita/quotes/"+m.id}} key={m.id}><p key={m.id} className="text-lg font-normal my-2 py-2 px-1 hover:bg-[#222] ">{m.id}. {m.author}</p></Link>
         )
       })}
       </div>

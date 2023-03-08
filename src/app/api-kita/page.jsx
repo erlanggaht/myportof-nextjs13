@@ -3,7 +3,7 @@ import Loading from "./loading";
 import Phone from "./phone";
 import Quotes from "./quotes";
 
-export default async function APIkita() {
+export default  function APIkita() {
 
 
   return (
