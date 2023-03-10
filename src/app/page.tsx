@@ -21,7 +21,7 @@ const Works = useRef<HTMLInputElement>()
   return (
     <>
       <div id='center-content' className='m-3 sm:m-10 drop-shadow-sm'>
-        <Home footer={footer} skills={skills} projects={projects} Works={Works}/>
+        <Home />
         <Skills skills={skills} />
         <Work Works={Works}/>
         <Portof  projects={projects}/>

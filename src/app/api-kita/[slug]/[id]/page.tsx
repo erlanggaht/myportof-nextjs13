@@ -20,7 +20,6 @@ export default async function Page({params,searchParams} : {
   let quotesByID =  await QuotesAPI(params.id)
   let {id,title,description,price,rating,stock,brand,category,thumbnail,images} = produkByID
   let {idQuotes,quote,author} = quotesByID
-  console.log(quotesByID)
   switch (params.slug) {
       case 'products' :
         break;
