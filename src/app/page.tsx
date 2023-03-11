@@ -9,7 +9,6 @@ import { useRef } from 'react'
 
 
 
-
 export default function Page() {
 const footer = useRef<HTMLInputElement>()
 const skills = useRef<HTMLInputElement>()
