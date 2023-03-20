@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { LoadIng } from '../Home/home'
 import humanTarget from '../icons/human-target.svg'
 export default function Navbar({footer,skills,projects,Works,isLoadings,setLoadings} : any) {

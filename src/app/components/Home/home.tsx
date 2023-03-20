@@ -14,7 +14,7 @@ export const LoadIng = () => {
  )  
 }
 
-export default function Home() {
+export default function Home({skills,Works,projects,footer} : any) {
 
   const router = useRouter()
   const [isLoading,setLoading] : any = useState()
@@ -41,7 +41,7 @@ export default function Home() {
             </div>
           </div>
           <div className='main-content bg-[#585858]  relative'>
-           <Navbar isLoadings = {isLoading} setLoadings ={setLoading}/>
+           <Navbar isLoadings = {isLoading} setLoadings ={setLoading} skills={skills} Works={Works} projects={projects} footer={footer}/>
          
             <div className='content-profile mt-28 sm:mt-32'>
               <div className='mx-auto mt-auto text-center overflow-hidden hidden sm:inline'><Image src={imageProfile} alt='imageProfile' width={240} height={280} className='drop-shadow-md w-auto sm:w-auto sm:h-auto ' /></div>

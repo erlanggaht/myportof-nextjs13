@@ -19,7 +19,7 @@ const links = ()=> {
  <Link  href={''} onClick={()=>links()} className=' group hover:opacity-90 transition-all' >  <div
     className="flex flex-col bg-neutral-800 shadow-lg  md:max-w-xl md:flex-row">
     <Image
-      className="h-auto md:h-auto w-full object-cover md:w-auto "
+      className="h-auto md:h-auto w-full object-cover md:w-auto object-cover"
       src={image}
       alt="img-ytdownloader" width={250} height={300} quality="100"/>
     <div className="flex flex-col justify-start p-8 px-5 relative cards">

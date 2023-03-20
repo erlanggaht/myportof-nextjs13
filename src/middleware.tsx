@@ -1,7 +1,4 @@
-export default function middleware() {
-    // console.log('api kita')
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+export default function middleware(request :NextRequest) {
 }
-
-export const config = {
-    matcher: '/api-kita/:path*',
-  }
